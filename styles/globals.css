@@ -9,7 +9,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: var(--font-sans); /* Use custom font family */
+  font-family: var(--font-sans);
   background-color: theme('colors.bg-light');
   color: theme('colors.text-dark');
   line-height: 1.5;
@@ -17,7 +17,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom utility classes for components for clearer naming based on Pinterest design */
 .payment-container, .form-wrapper, .confirmation-wrapper {
   @apply bg-card-bg rounded-lg shadow-md p-8 md:p-10 max-w-2xl w-full border border-border-grey text-center mx-auto my-8;
 }
@@ -58,7 +57,7 @@ body {
   @apply text-3xl text-accent-blue;
 }
 
-/* Specific icon container/icon colors for cards */
+/*icon container/icon colors for cards */
 .mpesa-option .method-icon-container { @apply bg-green-50; }
 .mpesa-option .method-icon { @apply text-mpesa-green; }
 .mpesa-option:hover { @apply border-mpesa-green; }
