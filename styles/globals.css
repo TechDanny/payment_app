@@ -1,0 +1,301 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-sans); /* Use custom font family */
+  background-color: theme('colors.bg-light');
+  color: theme('colors.text-dark');
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom utility classes for components for clearer naming based on Pinterest design */
+.payment-container, .form-wrapper, .confirmation-wrapper {
+  @apply bg-card-bg rounded-lg shadow-md p-8 md:p-10 max-w-2xl w-full border border-border-grey text-center mx-auto my-8;
+}
+
+.payment-header, .form-header {
+  @apply text-3xl md:text-4xl font-bold text-text-dark mb-4;
+}
+
+.payment-sub-header {
+  @apply text-base text-text-medium mb-10;
+}
+
+.text-highlight {
+  @apply text-accent-blue font-semibold;
+}
+
+.text-highlight-mpesa { @apply text-mpesa-green; }
+.text-highlight-bank { @apply text-bank-blue; }
+.text-highlight-wallet { @apply text-wallet-purple; }
+
+.payment-method-grid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-5;
+}
+
+.method-card {
+  @apply flex flex-col items-center p-6 rounded-md bg-card-bg shadow-sm border border-border-grey no-underline text-text-dark transition-all duration-200 ease-in-out;
+}
+
+.method-card:hover {
+  @apply transform -translate-y-1 scale-105 shadow-lg border-accent-blue;
+}
+
+.method-icon-container {
+  @apply bg-bg-light rounded-full p-4 w-16 h-16 flex justify-center items-center mb-4 shadow-inner;
+}
+
+.method-icon {
+  @apply text-3xl text-accent-blue;
+}
+
+/* Specific icon container/icon colors for cards */
+.mpesa-option .method-icon-container { @apply bg-green-50; }
+.mpesa-option .method-icon { @apply text-mpesa-green; }
+.mpesa-option:hover { @apply border-mpesa-green; }
+
+.bank-option .method-icon-container { @apply bg-blue-50; }
+.bank-option .method-icon { @apply text-bank-blue; }
+.bank-option:hover { @apply border-bank-blue; }
+
+.wallet-option .method-icon-container { @apply bg-purple-50; }
+.wallet-option .method-icon { @apply text-wallet-purple; }
+.wallet-option:hover { @apply border-wallet-purple; }
+
+
+.method-title {
+  @apply text-lg font-semibold mb-2;
+}
+
+.method-description {
+  @apply text-sm text-text-medium;
+}
+
+/* Form Styles */
+.form-warning {
+  @apply bg-yellow-50 text-yellow-800 border border-yellow-200 rounded-sm p-4 mb-6 text-sm text-left flex items-start gap-2;
+}
+
+.form-warning i {
+  @apply text-warning-yellow text-xl;
+}
+
+.payment-form-card {
+  @apply bg-card-bg rounded-md shadow-sm border border-border-grey p-6 text-left flex flex-col gap-5;
+}
+
+.input-group-form {
+  @apply mb-4;
+}
+
+.input-label {
+  @apply block text-sm font-semibold text-text-dark mb-2;
+}
+
+.input-label i {
+  @apply mr-2 text-accent-blue;
+}
+
+.input-field {
+  @apply w-full p-3 border border-border-grey rounded-sm text-base box-border shadow-sm transition-all duration-200 ease-in-out;
+}
+
+.input-field:focus {
+  @apply border-accent-blue outline-none ring-2 ring-accent-blue ring-opacity-20;
+}
+
+.submit-button-form {
+  @apply flex items-center justify-center gap-2 px-6 py-3 border-none rounded-sm text-base font-semibold text-text-light cursor-pointer transition-all duration-200 ease-in-out shadow-sm mt-4;
+}
+
+.submit-button-form:hover {
+  @apply -translate-y-0.5 shadow-md;
+}
+
+.mpesa-button-form { @apply bg-mpesa-green; }
+.mpesa-button-form:hover { @apply bg-green-600; }
+
+.bank-button-form { @apply bg-bank-blue; }
+.bank-button-form:hover { @apply bg-blue-600; }
+
+.wallet-button-form { @apply bg-wallet-purple; }
+.wallet-button-form:hover { @apply bg-purple-600; }
+
+.back-to-home-link {
+  @apply inline-block mt-8 text-accent-blue no-underline font-medium text-sm transition-colors duration-200 ease-in-out;
+}
+
+.back-to-home-link:hover {
+  @apply text-blue-800 underline;
+}
+
+/* Confirmation Page Styles */
+.confirmation-wrapper {
+  @apply p-8 md:p-10;
+}
+
+.confirmation-card {
+  @apply bg-card-bg rounded-lg shadow-md p-8 border border-border-grey mb-6;
+}
+
+.success-card {
+  @apply border-mpesa-green bg-green-50;
+}
+.bank-confirmation-card {
+  @apply border-bank-blue bg-blue-50;
+}
+.wallet-confirmation-card {
+  @apply border-wallet-purple bg-purple-50;
+}
+
+
+.confirmation-icon-circle {
+  @apply bg-card-bg rounded-full p-5 w-24 h-24 flex justify-center items-center mx-auto mb-6 shadow-sm;
+}
+
+.confirmation-check-icon {
+  @apply text-5xl text-mpesa-green;
+}
+.bank-confirmation-card .confirmation-check-icon { @apply text-bank-blue; }
+.wallet-confirmation-card .confirmation-check-icon { @apply text-wallet-purple; }
+
+
+.confirmation-main-title {
+  @apply text-2xl md:text-3xl font-bold text-text-dark mb-3;
+}
+
+.confirmation-message {
+  @apply text-base text-text-dark mb-4;
+}
+
+.confirmation-important-note {
+  @apply text-sm text-danger-red font-semibold mt-4 mb-6;
+}
+
+.confirmation-status-text {
+  @apply text-xs text-text-medium mt-4;
+}
+
+/* Loading Spinner */
+.confirmation-spinner {
+  @apply border-4 border-border-grey border-t-4 border-t-accent-blue rounded-full w-8 h-8 animate-spin mx-auto mt-5;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .payment-container, .form-wrapper, .confirmation-wrapper {
+    @apply p-6 md:p-8 max-w-full;
+  }
+  .payment-header, .form-header {
+    @apply text-2xl;
+  }
+  .payment-sub-header {
+    @apply text-sm mb-8;
+  }
+  .method-card {
+    @apply p-5;
+  }
+  .method-icon-container {
+    @apply w-14 h-14 p-3 mb-3;
+  }
+  .method-icon {
+    @apply text-2xl;
+  }
+  .method-title {
+    @apply text-base;
+  }
+  .method-description {
+    @apply text-xs;
+  }
+  .form-warning {
+    @apply text-xs p-3;
+  }
+  .form-warning i {
+    @apply text-lg;
+  }
+  .input-label {
+    @apply text-sm;
+  }
+  .input-field {
+    @apply p-2 text-sm;
+  }
+  .submit-button-form {
+    @apply px-5 py-2.5 text-sm;
+  }
+  .confirmation-main-title {
+    @apply text-xl;
+  }
+  .confirmation-icon-circle {
+    @apply w-20 h-20 p-4 mb-5;
+  }
+  .confirmation-check-icon {
+    @apply text-4xl;
+  }
+  .confirmation-message {
+    @apply text-sm;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-container, .form-wrapper, .confirmation-wrapper {
+    @apply p-4;
+  }
+  .payment-header, .form-header {
+    @apply text-xl;
+  }
+  .payment-sub-header {
+    @apply text-xs mb-6;
+  }
+  .payment-method-grid {
+    @apply grid-cols-1; /* Stack on very small screens */
+  }
+  .method-card {
+    @apply flex-row text-left justify-start items-center gap-4 p-4;
+  }
+  .method-icon-container {
+    @apply w-12 h-12 p-2 mb-0;
+  }
+  .method-icon {
+    @apply text-xl;
+  }
+  .method-title {
+    @apply text-base;
+  }
+  .method-description {
+    @apply hidden; /* Hide description on tiny screens to save space */
+  }
+  .form-warning {
+    @apply text-xs p-2;
+  }
+  .input-label {
+    @apply text-xs;
+  }
+  .input-field {
+    @apply p-2 text-xs;
+  }
+  .submit-button-form {
+    @apply px-4 py-2 text-xs;
+  }
+  .confirmation-main-title {
+    @apply text-lg;
+  }
+  .confirmation-icon-circle {
+    @apply w-16 h-16 p-3 mb-4;
+  }
+  .confirmation-check-icon {
+    @apply text-3xl;
+  }
+  .confirmation-message {
+    @apply text-xs;
+  }
+}
